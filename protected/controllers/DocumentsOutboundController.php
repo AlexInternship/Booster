@@ -122,7 +122,10 @@ class DocumentsOutboundController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('DocumentsOutbound');
+		$dataProvider=new CActiveDataProvider('DocumentsOutbound',array(
+        'sort'=>array(
+            'defaultOrder'=>'ID DESC',
+        ),));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

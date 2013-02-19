@@ -13,7 +13,6 @@ $this->breadcrumbs=array(
 
 $this->widget('zii.widgets.grid.CGridView', array(
     'dataProvider'=>$dataProvider,
-    'filter'=>$data,
     'columns'=>array(array(
             'name'  => 'id',
             'value' => 'CHtml::link(CHtml::encode($data->id), array("view","id"=>$data->id))',

@@ -58,17 +58,18 @@ class LogController extends Controller
         
          public function actionViewlag($document_table, $id)
 	{
-                  
-            $criteria=new CDbCriteria(array(                    
+             $criteria=new CDbCriteria(array(                    
                                 'condition'=>'document_table = "'.$document_table.'" AND document_id='.$id,
-                        ));
-            $dataProvider=new CActiveDataProvider('Log', array(
-            'criteria'=>$criteria,
-                ));
-            
+                        )); 
+             
+            $dataProvider=new CActiveDataProvider('Log',array(
+                    'criteria'=>$criteria,
+                    'sort'=>array(
+                    'defaultOrder'=>'ID DESC',
+                    ),));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));
+		)); 
     }
 
 	/**

@@ -122,7 +122,10 @@ class ScannedDocumentsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('ScannedDocuments');
+		$dataProvider=new CActiveDataProvider('ScannedDocuments',array(
+        'sort'=>array(
+            'defaultOrder'=>'ID DESC',
+        ),));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

@@ -12,16 +12,18 @@ $this->menu=array(
 );
  * 
  */
-?>
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+ $this->widget('zii.widgets.grid.CGridView', array(
     'dataProvider'=>$dataProvider,
     'filter'=>$data,
     'columns'=>array(array(
             'name'  => 'id',
             'value' => 'CHtml::link(CHtml::encode($data->id),"index.php?r=ScannedDocuments/view&id=".$data->id, array("id"=>"fancy-link"))',
             'type'  => 'raw'),
-            sender_email, document_id, protocol,original_received_date,received_date,file_name,document_data,comments,status,sync_data
+             array(
+            'name'  => 'logs',
+            'value' => 'CHtml::link(CHtml::encode("logs"), array("log/viewlag","document_table"=>"scanned_documents" ,"id"=>$data->id))',
+            'type'  => 'raw'),
+            sender_email, document_id, protocol,original_received_date,received_date,file_name,comments,status,sync_data
 )));
 
 //put fancybox on page

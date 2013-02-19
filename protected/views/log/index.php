@@ -14,9 +14,7 @@ $this->menu=array(
 	array('label'=>'Manage Log', 'url'=>array('admin')),
 );
 */
-?>
 
-<?php 
 
 $this->widget('zii.widgets.grid.CGridView', array(
     'dataProvider'=>$dataProvider,

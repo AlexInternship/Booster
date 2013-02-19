@@ -122,7 +122,10 @@ class DocumentsInboundController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('DocumentsInbound');
+		$dataProvider=new CActiveDataProvider('DocumentsInbound',array(
+        'sort'=>array(
+            'defaultOrder'=>'ID DESC',
+        ),));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
