@@ -22,10 +22,6 @@
 
 <div class="container" id="page">
 
-	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
-
 	<div id="mainmenu">
 		<?php $this->widget('bootstrap.widgets.TbNavbar', array(
 			'type'=>null, // null or 'inverse'
