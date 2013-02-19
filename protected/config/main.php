@@ -40,6 +40,10 @@ return array(
 	    'class' => 'ext.bootstrap.components.Bootstrap',
 	    'responsiveCss' => true,
 		),
+            
+                'fancybox' => array(
+                    'class' => 'ext.fancybox.EFancyBox'
+                ),
 		
 		'user'=>array(
 			// enable cookie-based authentication

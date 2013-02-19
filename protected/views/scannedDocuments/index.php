@@ -19,8 +19,13 @@ $this->menu=array(
     'filter'=>$data,
     'columns'=>array(array(
             'name'  => 'id',
-            'value' => 'CHtml::link(CHtml::encode($data->id), array("view","id"=>$data->id))',
+            'value' => 'CHtml::link(CHtml::encode($data->id),"index.php?r=ScannedDocuments/view&id=".$data->id, array("id"=>"fancy-link"))',
             'type'  => 'raw'),
             sender_email, document_id, protocol,original_received_date,received_date,file_name,document_data,comments,status,sync_data
 )));
+
+//put fancybox on page
+$this->widget('fancybox.EFancyBox', array(
+        'target'=>'a#fancy-link',
+        'config'=>array(),));  
 ?>

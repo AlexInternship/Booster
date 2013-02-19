@@ -21,7 +21,17 @@ $this->menu=array(
     'filter'=>$data,
     'columns'=>array(array(
             'name'  => 'id',
-            'value' => 'CHtml::link(CHtml::encode($data->id), array("view","id"=>$data->id))',
+            'value' => 'CHtml::link(CHtml::encode($data->id),"index.php?r=documentsInbound/view&id=".$data->id, array("id"=>"fancy-link"))',
             'type'  => 'raw'),
-            uuid, sender_id, recipien_id,document_type,process_type, received_date, document_data, status, sync_data
-))); ?>
+                     array(
+            'name'  => 'logs',
+            'value' => 'CHtml::link(CHtml::encode("logs"), array("log/viewlag","document_table"=>"documents_inbound" ,"id"=>$data->id))',
+            'type'  => 'raw'),
+            uuid, sender_id, recipien_id,document_type,process_type, received_date, status, sync_data
+)));
+ 
+//put fancybox on page
+$this->widget('fancybox.EFancyBox', array(
+        'target'=>'a#fancy-link',
+        'config'=>array(),));    
+?>

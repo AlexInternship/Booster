@@ -21,7 +21,13 @@ $this->menu=array(
     'filter'=>$data,
     'columns'=>array(array(
             'name'  => 'id',
-            'value' => 'CHtml::link(CHtml::encode($data->id), array("view","id"=>$data->id))',
+            'value' => 'CHtml::link(CHtml::encode($data->id),"index.php?r=documentsOutbound/view&id=".$data->id, array("id"=>"fancy-link"))',
             'type'  => 'raw'),
             ehfportal_uuid, peppol_uuid, document_id,sender_id,recipent_id, document_type,process_type, received_date, send_data, document_data,file,status,biztalkqueue_id,sync_data
-))); ?>
+))); 
+
+//put fancybox on page
+$this->widget('fancybox.EFancyBox', array(
+        'target'=>'a#fancy-link',
+        'config'=>array(),));  
+?>

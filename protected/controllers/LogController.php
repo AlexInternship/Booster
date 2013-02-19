@@ -28,7 +28,7 @@ class LogController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','viewLag'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -55,6 +55,21 @@ class LogController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
+        
+         public function actionViewlag($document_table, $id)
+	{
+                  
+            $criteria=new CDbCriteria(array(                    
+                                'condition'=>'document_table = "'.$document_table.'" AND document_id='.$id,
+                        ));
+            $dataProvider=new CActiveDataProvider('Log', array(
+            'criteria'=>$criteria,
+                ));
+            
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+    }
 
 	/**
 	 * Creates a new model.

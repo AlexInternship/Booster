@@ -23,20 +23,13 @@ $this->widget('zii.widgets.grid.CGridView', array(
     'filter'=>$data,
     'columns'=>array(array(
             'name'  => 'id',
-            'value' => 'CHtml::link(CHtml::encode($data->id), array("view","id"=>$data->id))',
+            'value' => 'CHtml::link(CHtml::encode($data->id),"index.php?r=Log/view&id=".$data->id, array("id"=>"fancy-link"))',
             'type'  => 'raw'),
             log_code, document_table, document_id,date,message,cleaned_message,status,
 )));
  
-/*
- * 
-
-"CHtml::link(CHtml::encode(id), array('view', 'id'=>id)"
-$this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-));
- * 
- */
-
+//put fancybox on page
+$this->widget('fancybox.EFancyBox', array(
+        'target'=>'a#fancy-link',
+        'config'=>array(),));  
 ?>
