@@ -6,14 +6,6 @@ $this->breadcrumbs=array(
 	'Scanned Documents'=>array('index'),
 	$model->id,
 );
-
-$this->menu=array(
-	array('label'=>'List ScannedDocuments', 'url'=>array('index')),
-	array('label'=>'Create ScannedDocuments', 'url'=>array('create')),
-	array('label'=>'Update ScannedDocuments', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete ScannedDocuments', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage ScannedDocuments', 'url'=>array('admin')),
-);
 ?>
 
 <h1>View ScannedDocuments #<?php echo $model->id; ?></h1>

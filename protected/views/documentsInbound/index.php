@@ -18,7 +18,6 @@ $this->menu=array(
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
     'dataProvider'=>$dataProvider,
-    'filter'=>$data,
     'columns'=>array(array(
             'name'  => 'id',
             'value' => 'CHtml::link(CHtml::encode($data->id),"index.php?r=documentsInbound/view&id=".$data->id, array("id"=>"fancy-link"))',

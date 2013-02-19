@@ -6,14 +6,6 @@ $this->breadcrumbs=array(
 	'Documents Inbounds'=>array('index'),
 	$model->id,
 );
-
-$this->menu=array(
-	array('label'=>'List DocumentsInbound', 'url'=>array('index')),
-	array('label'=>'Create DocumentsInbound', 'url'=>array('create')),
-	array('label'=>'Update DocumentsInbound', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete DocumentsInbound', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage DocumentsInbound', 'url'=>array('admin')),
-);
 ?>
 
 <h1>View DocumentsInbound #<?php echo $model->id; ?></h1>
