@@ -22,7 +22,7 @@ $this->menu=array(
             'name'  => 'logs',
             'value' => 'CHtml::link(CHtml::encode("logs"), array("log/viewlag","document_table"=>"documents_inbound" ,"id"=>$data->id))',
             'type'  => 'raw'),
-            uuid, sender_id, recipien_id,document_type,process_type, received_date, status, sync_data
+            'uuid', 'sender_id', 'recipien_id','document_type','process_type', 'received_date', 'status', 'sync_data'
 )));
  
 //put fancybox on page

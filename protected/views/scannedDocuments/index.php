@@ -14,7 +14,6 @@ $this->menu=array(
  */
  $this->widget('zii.widgets.grid.CGridView', array(
     'dataProvider'=>$dataProvider,
-    'filter'=>$data,
     'columns'=>array(array(
             'name'  => 'id',
             'value' => 'CHtml::link(CHtml::encode($data->id),"index.php?r=ScannedDocuments/view&id=".$data->id, array("id"=>"fancy-link"))',
@@ -23,7 +22,7 @@ $this->menu=array(
             'name'  => 'logs',
             'value' => 'CHtml::link(CHtml::encode("logs"), array("log/viewlag","document_table"=>"scanned_documents" ,"id"=>$data->id))',
             'type'  => 'raw'),
-            sender_email, document_id, protocol,original_received_date,received_date,file_name,comments,status,sync_data
+            'sender_email', 'document_id', 'protocol','original_received_date','received_date','file_name','comments','status','sync_data'
 )));
 
 //put fancybox on page
