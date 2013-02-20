@@ -8,6 +8,8 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Access point',
+        'defaultController' => 'log',
+
 
 	// preloading components
 	'preload'=>array('bootstrap','log', 'fancybox'),
